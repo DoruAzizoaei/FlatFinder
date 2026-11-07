@@ -31,7 +31,7 @@ import { Role } from "../../interfaces/UsersInterfaces";
 
 import { getInitials } from "../../utils/auth";
 
-import styles from "./styles/NavbarComponent.module.css";
+import styles from "./styles/NavBarComponent.module.css";
 
 type Anchor = "right";
 
@@ -163,7 +163,7 @@ const NavbarComponent: React.FC<{ user: User | null }> = ({
         >
           {!user.photoURL &&
             getInitials(
-              firestoreUser ? `${firestoreUser.displayName}` : "User"
+              firestoreUser ? `${firestoreUser.displayName}` : "User",
             )}
         </Avatar>
       )}
