@@ -1,0 +1,139 @@
+@import "../../styles/variables.scss";
+
+.messages-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-bg-light, $opacity-light-bg);
+  font-family: $font-family-base;
+  .inbox-column {
+    width: 30%;
+    background-color: $color-white;
+    border-right: 1px solid $color-accent;
+    overflow-y: auto;
+    padding: $spacing-medium;
+  }
+  .chat-column {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-medium;
+    overflow: hidden;
+  }
+}
+
+.inboxContainer {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .item {
+    padding: $spacing-medium;
+    margin-bottom: $spacing-small;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background $transition-medium;
+    border-left: 10px solid $color-primary;
+    background-color: $color-white;
+
+    .conversation {
+      width: 100%;
+      .message {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .item:hover {
+    background-color: $color-accent;
+    color: $color-white;
+  }
+
+  .item.active {
+    background-color: $color-primary;
+    font-weight: bold;
+    color: $color-white;
+  }
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: $spacing-small;
+  height: 100%;
+  .chatHeader {
+    height: 15%;
+    padding-bottom: $spacing-small + 4;
+    border-bottom: 1px solid $color-grey-border;
+  }
+  .chatMessages {
+    display: flex;
+    flex-direction: column;
+    height: 78%;
+    overflow-y: scroll;
+    padding: $spacing-medium $spacing-small;
+    gap: $gap-small;
+    background-color: $color-white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-light;
+
+    .loadingWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
+    .messageRow {
+      display: flex;
+      max-width: 70%;
+    }
+    .ownMessage {
+      align-self: flex-end;
+      justify-content: flex-end;
+    }
+
+    .otherMessage .messageBubble {
+      align-self: flex-start;
+      background-color: lighten($color-accent, 30%);
+    }
+    .messageBubble {
+      padding: $spacing-small $spacing-medium;
+      border-radius: 20px;
+      background-color: lighten($color-accent, 30%);
+      box-shadow: $shadow-light;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+    .ownMessage .messageBubble {
+      background-color: $color-accent;
+    }
+  }
+  .chatInput {
+    height: 9%;
+    border-top: 1px solid $color-grey-border;
+  }
+}
+
+.messageForm {
+  display: flex;
+  gap: $gap-small;
+
+  .messageButton {
+    padding: 10px 16px;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background $transition-medium;
+  }
+
+  .messageButton:hover {
+    background-color: $color-button-hover;
+  }
+}

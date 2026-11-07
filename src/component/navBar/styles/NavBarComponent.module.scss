@@ -1,0 +1,37 @@
+@import "../../styles/variables.scss";
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-small $spacing-medium;
+  background-color: $color-primary;
+  color: $color-white;
+  box-shadow: $shadow-light;
+  align-items: center;
+
+  .logoDiv {
+    height: 50px;
+
+    &:hover {
+      cursor: pointer;
+    }
+    .logo {
+      height: 100%;
+    }
+  }
+  .avatar {
+    cursor: pointer;
+    margin-right: $spacing-medium;
+    height: 40px;
+    width: 40px;
+  }
+}
+.drawerMenu {
+  .listItem {
+    transition: background-color $transition-medium;
+
+    &:hover {
+      background-color: lighten($color-primary, 20%);
+    }
+  }
+}
